@@ -2,91 +2,54 @@
 <body>
 <form action="{{url_for('predict_datapoint')}}" method="POST">
     <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
         <label for="age">Age:</label>
-        <input type="text" id="age" name="age" placeholder="Enter age value (integer)">
+        <input type="text" id="age" name="age" placeholder="Enter age value (float)">
     </div>
 
     <div class="form-group">
-        <label for="job">Job:</label>
-        <select id="job" name="job">
-            <option value="admin">Admin</option>
-            <option value="technician">Technician</option>
-            <option value="services">Services</option>
-            <option value="management">Management</option>
-            <option value="retired">Retired</option>
-            <option value="blue_collar">Blue Collar</option>
-            <option value="unemployed">Unemployed</option>
-            <option value="entrepreneur">Entrepreneur</option>
-            <option value="housemaid">Housemaid</option>
-            <option value="unknown">Unknown</option>
-            <option value="self_employed">Self Employed</option>
-            <option value="student">Student</option>
+        <label for="hypertension">Hypertension:</label>
+        <input type="text" id="hypertension" name="hypertension" placeholder="Enter hypertension value (integer)">
+    </div>
+
+    <div class="form-group">
+        <label for="heart_disease">Heart Disease:</label>
+        <input type="text" id="heart_disease" name="heart_disease" placeholder="Enter heart disease value (integer)">
+    </div>
+
+    <div class="form-group">
+        <label for="smoking_history">Smoking History:</label>
+        <select id="smoking_history" name="smoking_history">
+            <option value="former">Former</option>
+            <option value="No_Info">No Info</option>
+            <option value="never">Never</option>
+            <option value="not_current">Not Current</option>
+            <option value="current">Current</option>
+            <option value="ever">Ever</option>
         </select>
     </div>
 
     <div class="form-group">
-        <label for="marital">Marital Status:</label>
-        <select id="marital" name="marital">
-            <option value="married">Married</option>
-            <option value="single">Single</option>
-            <option value="divorced">Divorced</option>
-        </select>
+        <label for="bmi">BMI:</label>
+        <input type="text" id="bmi" name="bmi" placeholder="Enter BMI value (float)">
     </div>
 
     <div class="form-group">
-        <label for="education">Education:</label>
-        <select id="education" name="education">
-            <option value="secondary">Secondary</option>
-            <option value="tertiary">Tertiary</option>
-            <option value="primary">Primary</option>
-            <option value="unknown">Unknown</option>
-        </select>
+        <label for="HbA1c_level">HbA1c Level:</label>
+        <input type="text" id="HbA1c_level" name="HbA1c_level" placeholder="Enter HbA1c level value (float)">
     </div>
 
     <div class="form-group">
-        <label for="balance">Balance:</label>
-        <input type="text" id="balance" name="balance" placeholder="Enter balance value (integer)">
-    </div>
-
-    <div class="form-group">
-        <label for="housing">Housing:</label>
-        <select id="housing" name="housing">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="loan">Loan:</label>
-        <select id="loan" name="loan">
-            <option value="no">No</option>
-            <option value="yes">Yes</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="duration">Duration:</label>
-        <input type="text" id="duration" name="duration" placeholder="Enter duration value (integer)">
-    </div>
-
-    <div class="form-group">
-        <label for="pdays">Pdays:</label>
-        <input type="text" id="pdays" name="pdays" placeholder="Enter pdays value (integer)">
-    </div>
-
-    <div class="form-group">
-        <label for="previous">Previous:</label>
-        <input type="text" id="previous" name="previous" placeholder="Enter previous value (integer)">
-    </div>
-
-    <div class="form-group">
-        <label for="poutcome">Outcome of Previous Marketing Campaign:</label>
-        <select id="poutcome" name="poutcome">
-            <option value="unknown">Unknown</option>
-            <option value="other">Other</option>
-            <option value="failure">Failure</option>
-            <option value="success">Success</option>
-        </select>
+        <label for="blood_glucose_level">Blood Glucose Level:</label>
+        <input type="text" id="blood_glucose_level" name="blood_glucose_level" placeholder="Enter blood glucose level value (integer)">
     </div>
 
     <div style="clear:both;"></div>

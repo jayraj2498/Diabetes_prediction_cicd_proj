@@ -37,31 +37,25 @@ class  predictpipeline :
         
 class CustomData: 
     def __init__(self, 
-                 age: int,
-                 job: str,
-                 marital: str,
-                 education: str,
-                 balance: int,
-                 housing: str,
-                 loan: str,
-                 duration: int,
-                 pdays: int,
-                 previous: int,
-                 poutcome: str
+                 gender: str,
+                 age: float,
+                 hypertension: int,
+                 heart_disease: int,
+                 smoking_history: str,
+                 bmi: float,
+                 HbA1c_level: float,
+                 blood_glucose_level: int
                  ):
         
         
+        self.gender = gender
         self.age = age
-        self.job = job
-        self.marital = marital
-        self.education = education
-        self.balance = balance
-        self.housing = housing
-        self.loan = loan
-        self.duration = duration
-        self.pdays = pdays
-        self.previous = previous
-        self.poutcome = poutcome
+        self.hypertension = hypertension
+        self.heart_disease = heart_disease
+        self.smoking_history = smoking_history
+        self.bmi = bmi
+        self.HbA1c_level = HbA1c_level
+        self.blood_glucose_level = blood_glucose_level
         
         
     # here we make incoming data as dataframe to train our mdel     
@@ -70,17 +64,14 @@ class CustomData:
         
         try:
             custom_data_input_dict ={
+            "gender": [self.gender],
             "age": [self.age],
-            "job": [self.job],
-            "marital": [self.marital],
-            "education": [self.education],
-            "balance": [self.balance],
-            "housing": [self.housing],
-            "loan": [self.loan],
-            "duration": [self.duration],
-            "pdays": [self.pdays],
-            "previous": [self.previous],
-            "poutcome": [self.poutcome]
+            "hypertension": [self.hypertension],
+            "heart_disease": [self.heart_disease],
+            "smoking_history": [self.smoking_history],
+            "bmi": [self.bmi],
+            "HbA1c_level": [self.HbA1c_level],
+            "blood_glucose_level": [self.blood_glucose_level]
             
             }
             return pd.DataFrame(custom_data_input_dict) 

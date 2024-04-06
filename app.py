@@ -26,17 +26,14 @@ def predict_datapoint():
     
     else:
         data=CustomData(
-            age=int(request.form.get('age')),
-            job=request.form.get('job'),
-            marital=request.form.get('marital'),
-            education=request.form.get('education'),
-            balance=int(request.form.get('balance')),
-            housing=request.form.get('housing'),
-            loan=request.form.get('loan'),
-            duration=int(request.form.get('duration')),
-            pdays=int(request.form.get('pdays')),
-            previous=int(request.form.get('previous')),
-            poutcome=request.form.get('poutcome')
+            gender=request.form.get('gender'),
+            age=float(request.form.get('age')),
+            hypertension=int(request.form.get('hypertension')),
+            heart_disease=int(request.form.get('heart_disease')),
+            smoking_history=request.form.get('smoking_history'),
+            bmi=float(request.form.get('bmi')),
+            HbA1c_level=float(request.form.get('HbA1c_level')),
+            blood_glucose_level=int(request.form.get('blood_glucose_level'))
             
         )
         
@@ -45,13 +42,13 @@ def predict_datapoint():
         predict_pipeline=predictpipeline()
         pred=predict_pipeline.predict(final_new_data)
         
-        result_str = 'yes' if pred[0] == 1 else 'no'
+        result_str = 'Positive' if pred[0] == 1 else 'Negative'
         
         # Determine message based on prediction
-        message = "Congratulations! You're predicted to make a deposit." if pred[0] == 1 else "Sorry, you're not predicted to make a deposit."
+        message = "The prediction result is Positive.You are Diabetic " if pred[0] == 1 else "The prediction result is Negative. You are Non Diabetic"
         
         # Render results template with prediction
-        return render_template('results.html', final_result=result_str ,message=message)
+        return render_template('results.html', final_result=result_str, message=message)
     
     
     
