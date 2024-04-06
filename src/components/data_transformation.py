@@ -96,6 +96,10 @@ class DataTransformation :
             input_feature_test_df= test_df.drop(columns=[target_column_name],axis=1) 
             target_feature_test_df = test_df[target_column_name]    
             
+            # Ensure all columns are present in both training and testing data
+            input_feature_train_df, input_feature_test_df = input_feature_train_df.align(
+            input_feature_test_df, join='outer', axis=1, fill_value=0
+            )
             logging.info(" We Applying labelencoding to target data .")
             
             # label_encoder = LabelEncoder()  
@@ -108,7 +112,7 @@ class DataTransformation :
             
             
             input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df)
-            input_feature_test_arr=preprocessing_obj.fit_transform(input_feature_test_df) 
+            input_feature_test_arr=preprocessing_obj.transform(input_feature_test_df) 
             
             # we combine train_test data in one form 
             

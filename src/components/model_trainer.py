@@ -48,9 +48,8 @@ class ModelTrainer:
             )
             
             models = {
-                "Logistic Regression": LogisticRegression(),
+                # "Logistic Regression": LogisticRegression(),
                 "SVM": SVC(),
-                # "GaussianNB":GaussianNB(),
                 "Random Forest": RandomForestClassifier(),
                 "Decision Tree": DecisionTreeClassifier(),
                 "Gradient Boosting": GradientBoostingClassifier(),
@@ -62,7 +61,7 @@ class ModelTrainer:
             
             # Hyperparameters for tuning
             params = {
-                "Logistic Regression": {},
+                # "Logistic Regression": {},
                 "SVM": {
                     'kernel': ['linear', 'poly'],
                     'C': [0.1, 1],

@@ -54,7 +54,7 @@ def read_sql_data() :
             password=password ,
             db=db
         )
-        logging.info("Connection wrt db establish as " ,mydb) 
+        logging.info("Connection wrt db establish as %s", mydb) 
         df=pd.read_sql_query("select * from diabetes_prediction  " , mydb)
         # print(df.head(3))
         return df 
