@@ -33,8 +33,8 @@ class DataTransformation :
         '''
         
         try:
-            numerical_columns = ['age', 'balance', 'duration', 'pdays', 'previous'] 
-            categorical_columns = ['job', 'marital', 'education', 'housing', 'loan', 'poutcome'] 
+            numerical_columns = ['age', 'hypertension', 'heart_disease', 'bmi', 'HbA1c_level', 'blood_glucose_level'] 
+            categorical_columns = ['gender', 'smoking_history'] 
             
             # we make pipeline 
             
@@ -87,7 +87,7 @@ class DataTransformation :
             
             preprocessing_obj=self.get_data_transformer_object()
             
-            target_column_name='deposit' 
+            target_column_name='diabetes' 
             
             input_feature_train_df= train_df.drop(columns=[target_column_name],axis=1) 
             target_feature_train_df = train_df[target_column_name]    
@@ -98,10 +98,10 @@ class DataTransformation :
             
             logging.info(" We Applying labelencoding to target data .")
             
-            label_encoder = LabelEncoder()  
+            # label_encoder = LabelEncoder()  
             
-            target_feature_train_df = label_encoder.fit_transform(target_feature_train_df)
-            target_feature_test_df= label_encoder.transform(target_feature_test_df)
+            # target_feature_train_df = label_encoder.fit_transform(target_feature_train_df)
+            # target_feature_test_df= label_encoder.transform(target_feature_test_df)
             
             logging.info(
                     f" We Applying preprocessing object on training dataframe and testing dataframe.") 
